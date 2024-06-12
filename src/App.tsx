@@ -2,7 +2,8 @@ import { Refine, Authenticated } from "@refinedev/core";
 import routerProvider, { NavigateToResource } from "@refinedev/react-router-v6";
 import { ThemedLayoutV2, ThemedTitleV2, useNotificationProvider, } from "@refinedev/antd";
 
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { HashRouter, Routes, Route, Outlet } from "react-router-dom";
+
 
 import { ConfigProvider, App as AntdApp } from "antd";
 
@@ -26,7 +27,7 @@ import "antd/dist/reset.css";
 
 export default function App(): JSX.Element {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ConfigProvider>
         <AntdApp>
           <Refine
@@ -113,6 +114,6 @@ export default function App(): JSX.Element {
           </Refine>
         </AntdApp>
       </ConfigProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
