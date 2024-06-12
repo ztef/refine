@@ -1,12 +1,14 @@
 import { AuthProvider } from "@refinedev/core";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export const authProvider: AuthProvider = {
   // login method receives an object with all the values you've provided to the useLogin hook.
   login: async ({ email, password }) => {
 
 
     const response = await fetch(
-      "http://localhost:3000/users/login",
+      `${API_URL}/users/login`,
       {
         method: "POST",
         body: JSON.stringify({ email, password }),
@@ -39,7 +41,7 @@ export const authProvider: AuthProvider = {
  
 
   getIdentity: async () => {
-    const response = await fetch("http://localhost:3000/whoAmI", {
+    const response = await fetch(`${API_URL}/whoAmI`, {
       headers: {
         Authorization: localStorage.getItem("my_access_token"),
       },

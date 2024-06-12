@@ -20,6 +20,8 @@ import { Map } from "./pages/maps/mapa";
 
 import { Login } from "./pages/login";
 
+import {Logo} from "./components/logo";
+
 import "antd/dist/reset.css";
 
 export default function App(): JSX.Element {
@@ -68,7 +70,9 @@ export default function App(): JSX.Element {
                   >
                     <ThemedLayoutV2
                       Title={(props) => (
-                        <ThemedTitleV2 {...props} text="MEXPUR LOGISTICS" />
+                        <ThemedTitleV2 {...props} text="" 
+                         icon = {<Logo />}
+                        />
                       )}
                     >
                       <Outlet />
