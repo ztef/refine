@@ -14,20 +14,20 @@ export const UnitsDash = () =>  {
           <Grid item xs>
             <KpiCardInfo
               title="Unidades"
-              description= "Operadores Activos : 10"
+              description= "Unidades Activas : 10"
               route="/unidades"
             />
           </Grid>
           <Grid item xs>
             <KpiCardInfo
-              title="Unidades en Reparación"
-              description= "Vacantes : 2"
+              title="En Mantenimiento"
+              description= "Unidades : 2"
             />
           </Grid>
           <Grid item xs>
             <KpiCardInfo
-              title="Llantas"
-              description= "Temporales : 12"
+              title="Combustible"
+              description= "Opciones de Combustibles"
             />
           </Grid>
           <Grid item xs>

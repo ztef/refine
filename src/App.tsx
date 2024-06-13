@@ -56,16 +56,32 @@ export default function App(): JSX.Element {
               },
               
 
-              {
-                name : "trips",
-                list: "/trips",
-                meta: { label: "Viajes" },
-              },
+              
 
               {
                 name : "invoices",
                 list: "/invoices",
                 meta: { label: "Facturas" },
+              },
+
+
+              {
+                name : "negocios",
+                meta: { label: "Unidades de Negocio" },
+              },
+
+
+
+
+              {
+                name : "consolidados",
+                meta: { label: "Consolidados" , parent: "negocios"},
+              },
+
+              {
+                name : "trips",
+                list: "/trips",
+                meta: { label: "Viajes" , parent: "consolidados"},
               },
 
 
@@ -97,7 +113,7 @@ export default function App(): JSX.Element {
               {
                 name: "delivery",
                 list: "/delivery",
-                meta: { label: "Paquetería"},
+                meta: { label: "Paquetería", parent:"negocios"},
               },
 
               {
