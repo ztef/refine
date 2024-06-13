@@ -77,6 +77,7 @@ export default function KpiCard({
             {formatTotal(target)}
           </Typography>
         </CardContent>
+        
         <CardContent>
           <Chip
             icon={(100 - percent) < 75 ? <ArrowDownwardIcon /> : <ArrowUpwardIcon />}

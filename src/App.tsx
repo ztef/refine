@@ -19,11 +19,19 @@ import { ListCategories } from "./pages/categories/list";
 import { Main } from "./pages/dashboard/main";
 import { Map } from "./pages/maps/mapa";
 
+import { OperatorsDash } from "./pages/operators/operators_dash";
+import { TripsDash } from "./pages/trips/trips_dash";
+import { UnitsDash } from "./pages/units/units_dash";
+
+
 import { Login } from "./pages/login";
 
 import {Logo} from "./components/logo";
 
 import "antd/dist/reset.css";
+import { InvoicesDash } from "./pages/invoices/invoices_dash";
+import { InsuranceDash } from "./pages/insurance/insurance_dash";
+import { DeliveryDash } from "./pages/delivery/delivery_dash";
 
 export default function App(): JSX.Element {
   return (
@@ -38,28 +46,84 @@ export default function App(): JSX.Element {
 
             resources={[
               {
+                name: "main",
+                list: "/main",
+                meta: { label: "Dashboard" },
+              },
+              {
+                name : "recursos",
+                meta: { label: "Recursos" },
+              },
+              
+
+              {
+                name : "trips",
+                list: "/trips",
+                meta: { label: "Viajes" },
+              },
+
+              {
+                name : "invoices",
+                list: "/invoices",
+                meta: { label: "Facturas" },
+              },
+
+
+              
+              {
+                name: "categories",
+                list: "/categories",
+                meta: { label: "Tipos de Unidad", parent: "catalogos" },
+              },
+
+              {
+                name: "operators",
+                list: "/operators",
+                meta: { label: "Operadores", parent: "recursos" },
+              },
+
+              {
+                name: "units",
+                list: "/units",
+                meta: { label: "Unidades", parent: "recursos" },
+              },
+
+              {
+                name: "insurance",
+                list: "/insurance",
+                meta: { label: "Seguros", parent: "recursos" },
+              },
+              
+              {
+                name: "delivery",
+                list: "/delivery",
+                meta: { label: "Paquetería"},
+              },
+
+              {
+                name: "mapa",
+                list: "/mapa",
+                meta: { label: "Monitoreo" },
+              },
+
+              {
+                name : "catalogos",
+                options: {
+                  label: "Hidden Resource",
+                  hide: true,
+                },
+                meta: { label: "Catálogos" },
+              },
+
+              {
                 name: "unidades",
                 list: "/unidades",
                 show: "/unidades/:id",
                 edit: "/unidades/:id/edit",
                 create: "/unidades/create",
-                meta: { label: "Unidades" },
+                meta: { label: "Unidades" , parent: "catalogos"},
               },
-              {
-                name: "categories",
-                list: "/categories",
-                meta: { label: "Categories" },
-              },
-              {
-                name: "main",
-                list: "/main",
-                meta: { label: "Main" },
-              },
-              {
-                name: "mapa",
-                list: "/mapa",
-                meta: { label: "Mapas" },
-              },
+
             ]}
           >
             <Routes>
@@ -85,18 +149,47 @@ export default function App(): JSX.Element {
                   index
                   element={<NavigateToResource resource="main" />}
                 />
+                <Route path="/main">
+                  <Route index element={<Main />} />
+                </Route>
+
+                <Route path="/trips">
+                  <Route index element={<TripsDash />} />
+                </Route>
+
                 <Route path="/unidades">
                   <Route index element={<ListUnits />} />
                   <Route path=":id" element={<ShowUnit />} />
                   <Route path=":id/edit" element={<EditUnit />} />
                   <Route path="create" element={<CreateProduct />} />
                 </Route>
+
                 <Route path="/categories">
                   <Route index element={<ListCategories />} />
                 </Route>
-                <Route path="/main">
-                  <Route index element={<Main />} />
+
+                <Route path="/operators">
+                  <Route index element={<OperatorsDash />} />
                 </Route>
+
+                <Route path="/invoices">
+                  <Route index element={<InvoicesDash />} />
+                </Route>
+
+                <Route path="/insurance">
+                  <Route index element={<InsuranceDash />} />
+                </Route>
+
+                <Route path="/delivery">
+                  <Route index element={<DeliveryDash />} />
+                </Route>
+
+              
+
+                <Route path="/units">
+                  <Route index element={<UnitsDash />} />
+                </Route>
+                
                 <Route path="/mapa">
                   <Route index element={<Map />} />
                 </Route>
@@ -117,3 +210,4 @@ export default function App(): JSX.Element {
     </HashRouter>
   );
 }
+

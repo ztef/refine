@@ -6,6 +6,14 @@ export type KpiCardProps = {
     formatTotal?: (value: number) => number | string;
     formatTarget?: (value: number) => number | string;
   };
+
+  export type KpiCardInfoProps = {
+    title: string;
+    description: string;
+    route ? : string;
+     
+    
+  };
   
   export type DeltaType =
     | "error"
