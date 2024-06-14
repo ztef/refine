@@ -21,17 +21,17 @@ export default function CardMap({
   return (
     <Card elevation={3}>
        
-        <CardContent>
-            <MyMap />
-           
-        </CardContent>
+        
         <CardContent>
             
             <span>{title}</span><br></br>
             <span>{description}</span>
 
         </CardContent>
-         
+         <CardContent>
+            <MyMap />
+           
+        </CardContent>
        
      
     </Card>

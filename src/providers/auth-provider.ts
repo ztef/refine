@@ -41,11 +41,13 @@ export const authProvider: AuthProvider = {
  
 
   getIdentity: async () => {
+
     const response = await fetch(`${API_URL}/whoAmI`, {
+      method: 'GET', // Specify the HTTP method
       headers: {
-        Authorization: localStorage.getItem("my_access_token"),
-      },
-    });
+        'Content-Type': 'application/json', // Example of a header
+        'Authorization': 'Bearer ' + localStorage.getItem("my_access_token"), 
+      }});
 
     if (response.status < 200 || response.status > 299) {
       return null;

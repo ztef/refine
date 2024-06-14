@@ -32,6 +32,7 @@ import "antd/dist/reset.css";
 import { InvoicesDash } from "./pages/invoices/invoices_dash";
 import { InsuranceDash } from "./pages/insurance/insurance_dash";
 import { DeliveryDash } from "./pages/delivery/delivery_dash";
+import { Header}  from "./components/header"; 
 
 export default function App(): JSX.Element {
   return (
@@ -56,8 +57,6 @@ export default function App(): JSX.Element {
               },
               
 
-              
-
               {
                 name : "invoices",
                 list: "/invoices",
@@ -69,9 +68,6 @@ export default function App(): JSX.Element {
                 name : "negocios",
                 meta: { label: "Unidades de Negocio" },
               },
-
-
-
 
               {
                 name : "consolidados",
@@ -149,6 +145,8 @@ export default function App(): JSX.Element {
                     key="authenticated-routes"
                     redirectOnFail="/login"
                   >
+
+                  
                     <ThemedLayoutV2
                       Title={(props) => (
                         <ThemedTitleV2 {...props} text="" 
@@ -156,6 +154,7 @@ export default function App(): JSX.Element {
                         />
                       )}
                     >
+                        <Header />
                       <Outlet />
                     </ThemedLayoutV2>
                   </Authenticated>

@@ -35,7 +35,7 @@ export const Main = () =>  {
   return (
     <main>
       <Box mt={2} mb={3}>
-        <Grid container columnGap={3} rowGap={3}>
+        <Grid columns={3} container columnGap={3} rowGap={3}>
           <Grid item xs>
             <KpiCard
               title="Unidades Totales"
@@ -63,7 +63,7 @@ export const Main = () =>  {
                 />
           </Grid>
 
-          <Grid item xs>
+          <Grid  item xs={6}>
             <CardBar
                 title=" Ventas Acumuladas"
                 description= "Ventas"

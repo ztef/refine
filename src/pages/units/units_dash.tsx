@@ -30,7 +30,7 @@ export const UnitsDash = () =>  {
               description= "Opciones de Combustibles"
             />
           </Grid>
-          <Grid item xs>
+          <Grid item  xs={12}>
             <CardMap
               title="Localización de Unidades"
               description= "Localizar una Unidad"
